@@ -62,7 +62,7 @@ AS       := /usr/bin/as
 ## User defined environment variables
 ##
 CodeLiteDir:=/Applications/codelite.app/Contents/SharedSupport/
-Objects0=$(IntermediateDirectory)/main.c$(ObjectSuffix) 
+Objects0=$(IntermediateDirectory)/cmd_line_arguments.c$(ObjectSuffix) $(IntermediateDirectory)/data_types.c$(ObjectSuffix) $(IntermediateDirectory)/myproject.c$(ObjectSuffix) 
 
 
 
@@ -93,13 +93,29 @@ PreBuild:
 ##
 ## Objects
 ##
-$(IntermediateDirectory)/main.c$(ObjectSuffix): main.c $(IntermediateDirectory)/main.c$(DependSuffix)
-	$(CC) $(SourceSwitch) "/Volumes/data/devtech/projects/c_projects/30_days_to_c/week1/main.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/main.c$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/main.c$(DependSuffix): main.c
-	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/main.c$(ObjectSuffix) -MF$(IntermediateDirectory)/main.c$(DependSuffix) -MM main.c
+$(IntermediateDirectory)/cmd_line_arguments.c$(ObjectSuffix): cmd_line_arguments.c $(IntermediateDirectory)/cmd_line_arguments.c$(DependSuffix)
+	$(CC) $(SourceSwitch) "/Volumes/data/devtech/projects/c_projects/30_days_to_c/week1/cmd_line_arguments.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/cmd_line_arguments.c$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/cmd_line_arguments.c$(DependSuffix): cmd_line_arguments.c
+	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/cmd_line_arguments.c$(ObjectSuffix) -MF$(IntermediateDirectory)/cmd_line_arguments.c$(DependSuffix) -MM cmd_line_arguments.c
 
-$(IntermediateDirectory)/main.c$(PreprocessSuffix): main.c
-	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/main.c$(PreprocessSuffix) main.c
+$(IntermediateDirectory)/cmd_line_arguments.c$(PreprocessSuffix): cmd_line_arguments.c
+	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/cmd_line_arguments.c$(PreprocessSuffix) cmd_line_arguments.c
+
+$(IntermediateDirectory)/data_types.c$(ObjectSuffix): data_types.c $(IntermediateDirectory)/data_types.c$(DependSuffix)
+	$(CC) $(SourceSwitch) "/Volumes/data/devtech/projects/c_projects/30_days_to_c/week1/data_types.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/data_types.c$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/data_types.c$(DependSuffix): data_types.c
+	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/data_types.c$(ObjectSuffix) -MF$(IntermediateDirectory)/data_types.c$(DependSuffix) -MM data_types.c
+
+$(IntermediateDirectory)/data_types.c$(PreprocessSuffix): data_types.c
+	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/data_types.c$(PreprocessSuffix) data_types.c
+
+$(IntermediateDirectory)/myproject.c$(ObjectSuffix): myproject.c $(IntermediateDirectory)/myproject.c$(DependSuffix)
+	$(CC) $(SourceSwitch) "/Volumes/data/devtech/projects/c_projects/30_days_to_c/week1/myproject.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/myproject.c$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/myproject.c$(DependSuffix): myproject.c
+	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/myproject.c$(ObjectSuffix) -MF$(IntermediateDirectory)/myproject.c$(DependSuffix) -MM myproject.c
+
+$(IntermediateDirectory)/myproject.c$(PreprocessSuffix): myproject.c
+	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/myproject.c$(PreprocessSuffix) myproject.c
 
 
 -include $(IntermediateDirectory)/*$(DependSuffix)

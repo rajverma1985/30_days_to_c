@@ -3,7 +3,9 @@
   <Description/>
   <Dependencies/>
   <VirtualDirectory Name="src">
-    <File Name="main.c"/>
+    <File Name="cmd_line_arguments.c"/>
+    <File Name="data_types.c"/>
+    <File Name="myproject.c"/>
   </VirtualDirectory>
   <Settings Type="Executable">
     <GlobalSettings>
