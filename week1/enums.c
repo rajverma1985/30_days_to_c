@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main()
+int enums()
     {
     enum Company { A, B, C, D };
     enum Company a=A;
