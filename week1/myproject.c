@@ -1,7 +1,7 @@
-//#include <stdio.h>
-//
-//int main()
-//    {
-//    printf("Hello my name is raj!");
-//    return 0;
-//    }
+#include <stdio.h>
+
+int helloWorld()
+    {
+    printf("Hello my name is raj!");
+    return 0;
+    }

@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int main(int argc,  char *args[ ])
+int commandLineargs(int argc,  char *args[ ])
 {
     int numberofArgs = argc;
     char *argument1 = args[0];

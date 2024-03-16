@@ -1,7 +1,7 @@
 #include <stdio.h>
 // These are also called format specifiers
 
-int main1()
+int dataTypes()
 {
     int var_integer = 1;
     float var_float = 1.00;
