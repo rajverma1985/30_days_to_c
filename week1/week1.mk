@@ -62,7 +62,7 @@ AS       := /usr/bin/as
 ## User defined environment variables
 ##
 CodeLiteDir:=/Applications/codelite.app/Contents/SharedSupport/
-Objects0=$(IntermediateDirectory)/cmd_line_arguments.c$(ObjectSuffix) $(IntermediateDirectory)/data_types.c$(ObjectSuffix) $(IntermediateDirectory)/myproject.c$(ObjectSuffix) 
+Objects0=$(IntermediateDirectory)/areaofRectangle.c$(ObjectSuffix) $(IntermediateDirectory)/cmd_line_arguments.c$(ObjectSuffix) $(IntermediateDirectory)/data_types.c$(ObjectSuffix) $(IntermediateDirectory)/myproject.c$(ObjectSuffix) 
 
 
 
@@ -93,6 +93,14 @@ PreBuild:
 ##
 ## Objects
 ##
+$(IntermediateDirectory)/areaofRectangle.c$(ObjectSuffix): areaofRectangle.c $(IntermediateDirectory)/areaofRectangle.c$(DependSuffix)
+	$(CC) $(SourceSwitch) "/Volumes/data/devtech/projects/c_projects/30_days_to_c/week1/areaofRectangle.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/areaofRectangle.c$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/areaofRectangle.c$(DependSuffix): areaofRectangle.c
+	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/areaofRectangle.c$(ObjectSuffix) -MF$(IntermediateDirectory)/areaofRectangle.c$(DependSuffix) -MM areaofRectangle.c
+
+$(IntermediateDirectory)/areaofRectangle.c$(PreprocessSuffix): areaofRectangle.c
+	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/areaofRectangle.c$(PreprocessSuffix) areaofRectangle.c
+
 $(IntermediateDirectory)/cmd_line_arguments.c$(ObjectSuffix): cmd_line_arguments.c $(IntermediateDirectory)/cmd_line_arguments.c$(DependSuffix)
 	$(CC) $(SourceSwitch) "/Volumes/data/devtech/projects/c_projects/30_days_to_c/week1/cmd_line_arguments.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/cmd_line_arguments.c$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/cmd_line_arguments.c$(DependSuffix): cmd_line_arguments.c
