@@ -62,7 +62,7 @@ AS       := /usr/bin/as
 ## User defined environment variables
 ##
 CodeLiteDir:=/Applications/codelite.app/Contents/SharedSupport/
-Objects0=$(IntermediateDirectory)/areaofRectangle.c$(ObjectSuffix) $(IntermediateDirectory)/cmd_line_arguments.c$(ObjectSuffix) $(IntermediateDirectory)/data_types.c$(ObjectSuffix) $(IntermediateDirectory)/myproject.c$(ObjectSuffix) 
+Objects0=$(IntermediateDirectory)/areaofRectangle.c$(ObjectSuffix) $(IntermediateDirectory)/cmd_line_arguments.c$(ObjectSuffix) $(IntermediateDirectory)/enums.c$(ObjectSuffix) $(IntermediateDirectory)/data_types.c$(ObjectSuffix) $(IntermediateDirectory)/myproject.c$(ObjectSuffix) 
 
 
 
@@ -108,6 +108,14 @@ $(IntermediateDirectory)/cmd_line_arguments.c$(DependSuffix): cmd_line_arguments
 
 $(IntermediateDirectory)/cmd_line_arguments.c$(PreprocessSuffix): cmd_line_arguments.c
 	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/cmd_line_arguments.c$(PreprocessSuffix) cmd_line_arguments.c
+
+$(IntermediateDirectory)/enums.c$(ObjectSuffix): enums.c $(IntermediateDirectory)/enums.c$(DependSuffix)
+	$(CC) $(SourceSwitch) "/Volumes/data/devtech/projects/c_projects/30_days_to_c/week1/enums.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/enums.c$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/enums.c$(DependSuffix): enums.c
+	@$(CC) $(CFLAGS) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/enums.c$(ObjectSuffix) -MF$(IntermediateDirectory)/enums.c$(DependSuffix) -MM enums.c
+
+$(IntermediateDirectory)/enums.c$(PreprocessSuffix): enums.c
+	$(CC) $(CFLAGS) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/enums.c$(PreprocessSuffix) enums.c
 
 $(IntermediateDirectory)/data_types.c$(ObjectSuffix): data_types.c $(IntermediateDirectory)/data_types.c$(DependSuffix)
 	$(CC) $(SourceSwitch) "/Volumes/data/devtech/projects/c_projects/30_days_to_c/week1/data_types.c" $(CFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/data_types.c$(ObjectSuffix) $(IncludePath)

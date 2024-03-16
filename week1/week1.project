@@ -3,6 +3,7 @@
   <Description/>
   <Dependencies/>
   <VirtualDirectory Name="src">
+    <File Name="enums.c"/>
     <File Name="areaofRectangle.c"/>
     <File Name="cmd_line_arguments.c"/>
     <File Name="data_types.c"/>

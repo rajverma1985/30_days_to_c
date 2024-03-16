@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main()
+int areaOfrectangle()
 {
     double w = 2;
     double h = 3.5;
