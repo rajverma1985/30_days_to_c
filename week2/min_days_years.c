@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int main() {
+int minDaysyear() {
     int minutes;
     printf("Enter the number of minutes: ");
     scanf("%d", &minutes);
