@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main()
+int operators()
 {
     unsigned int a = 60;  //0011 1100
     unsigned int b = 13;  //0000 1101
@@ -12,7 +12,7 @@ int main()
     
     andresult = a & b;
     orresult = a | b;
-    printf("result is %d", andresult);
+    printf("result is %d\n", andresult);
     printf("result is %d", orresult);
     return 0;
     }
