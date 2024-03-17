@@ -1,5 +1,7 @@
 *.DS_Store
 *.clang-format
 *.clangd
-operators.dSYM
+*.dSYM
 tasks.json
+*.mk
+*.vscode
