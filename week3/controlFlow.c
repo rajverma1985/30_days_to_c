@@ -14,58 +14,48 @@ Calculate the amount of pay per week for the below conditions:
 #include <stdlib.h>
 
 // defining Constants for the calculations
-#define BASIC_PAY_RATE 12    // $ per hour
-#define OVERTIME_RATE 1.5    // time and a half
+#define BASIC_PAY_RATE 12.00    // $ per hour
+#define OVERTIME_RATE 40    // time and a half
 #define TAX_300 .15
 #define TAXN_150 .20
 #define TAXN .25
 
 int main()
 {
-    // variables defined here
-    int hours_worked;
-    double gross_pay; 
-    double net_pay;
-    double taxes;
+    int hours;
+    double grossPay, taxes, netPay, overTime;
 
-    printf("Enter the hours worked: \n");
-    scanf("%d", &hours_worked);
-    
-    //calculate the gross pay
+    printf("Please enter the number of hours worked this week: ");
+    scanf("%d", &hours);
 
-    if (hours_worked <= 40)
-    {
-        gross_pay = hours_worked * BASIC_PAY_RATE;
-    }
+    if (hours<=40)
+        grossPay = hours * BASIC_PAY_RATE;
     else
-    {   
-        double overtime = (hours_worked - 40) * BASIC_PAY_RATE;
-        gross_pay = (40 * BASIC_PAY_RATE) + overtime;
-    }
-    
-    // calculate taxes
-    if (gross_pay<=300)
     {
-        taxes = gross_pay * TAX_300;
+        grossPay = 40 * BASIC_PAY_RATE;
+        overTime = (hours - 40) * (BASIC_PAY_RATE * 1.5);
+        grossPay += overTime;
     }
-    else if (gross_pay > 300 && gross_pay <= 450)
+
+    if (grossPay <=300)
     {
-        taxes = gross_pay * 300;
-        taxes += (gross_pay - 300) * TAXN_150;
-        
+        taxes = grossPay * TAX_300;
+    }
+    else if (grossPay >300 && grossPay<=450)
+    {
+        taxes = 300 * TAX_300;
+        taxes += (grossPay - 300) * TAXN_150;
     }
     else
     {
-        taxes = gross_pay * 300;
-        taxes += (gross_pay - 300) * TAXN_150;
-        taxes += (gross_pay - 450) * TAXN;
+        taxes = 300 * TAX_300;
+        taxes += 150 * TAXN_150;
+        taxes += (grossPay - 450)*TAXN;
     }
-
-    net_pay = gross_pay - taxes;
-
-    printf("Your gross pay is: %d\n", gross_pay);
-    printf("Your taxes for the week are: %d\n", taxes);
-    printf("Your net pay for the week is: %d\n", net_pay);
-
+    
+    netPay = grossPay - taxes;
+    printf("Your gross pay is : %f\n", grossPay);
+    printf("you net pay is: %f\n", netPay);
+    printf("Your total taxes are %f:", taxes);
     return 0;
 }
