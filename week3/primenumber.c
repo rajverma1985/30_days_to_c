@@ -12,5 +12,17 @@ rules:
 
 int main(){
 
+	// initial section to generate numbers form 4 to 1000;
+
+	int number[1000]={2,3};
+	int primenumber[100]={0};
+	int count = 1000;
+	int i;
+	for (i=5; i<count; i=i+2)
+	{	
+	
+	}
 	return 0;
 }
+
+
