@@ -13,13 +13,13 @@ int main() {
     srand(time(NULL));
 
     // Define an array to store the random numbers
-    int numbers[100];
+    unsigned numbers[5];
 
     // Generate and print 100 random integers along with their memory addresses
     printf("Generated numbers and their memory addresses:\n");
-    for (int i = 0; i < 100; i++) {
-        numbers[i] = rand() % 1000; // Generate random numbers between 0 and 999
-        printf("%d\tAddress: %p\n", numbers[i], (void *)&numbers[i]);
+    for (unsigned i = 0; i < 5; i++) {
+        numbers[i] = rand() % 100000; // Generate random numbers between 0 and 999
+        printf("%u\tAddress: %p\n", numbers[i], (void *)&numbers[i]);
     }
 
     return 0;
