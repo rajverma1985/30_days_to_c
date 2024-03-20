@@ -22,3 +22,11 @@ int main(int argc, char const *argv[])
 	printf("The total is: %ld:\n", total);
 	return 0;
 }
+
+
+// initializing an array with initial values, one of the reasons is to detect when there is something wrong:
+// int counter[5] = {1,2,45,3,12} setting to some random loved values
+// int counter[5] = {0,0,0,0,0}   settings all initial values to zero.
+// int counter[50] = {1,2,3,5}   This will set the rest of the 46 values to zero.
+// IMP designated initalizors
+// 
