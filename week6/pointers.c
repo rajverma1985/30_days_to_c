@@ -9,18 +9,12 @@ pointer is itself a type and cannot be used with operators to add multiply etc. 
 
 
 int main() {
-    // Seed the random number generator
-    srand(time(NULL));
-
-    // Define an array to store the random numbers
-    unsigned numbers[5];
-
-    // Generate and print 100 random integers along with their memory addresses
-    printf("Generated numbers and their memory addresses:\n");
-    for (unsigned i = 0; i < 5; i++) {
-        numbers[i] = rand() % 100000; // Generate random numbers between 0 and 999
-        printf("%u\tAddress: %p\n", numbers[i], (void *)&numbers[i]);
-    }
-
+    int num = 150;
+    int *pNum = NULL;
+    // pNum = &num;
+    printf("Address of num is: %p\n", &num );
+    printf("Address of pNum is: %p\n", &pNum );
+    printf("Value of pNum is: %p\n", pNum );
+    printf("Value of what pNum is pointing to: %d\n", *pNum);
     return 0;
 }
