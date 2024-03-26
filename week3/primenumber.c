@@ -10,19 +10,10 @@ rules:
 5. Use loops to only find prime numbers and a loop to print out the array of prime numbers.
 */
 
+
 int main(){
-
-	// initial section to generate numbers form 4 to 1000;
-
-	int number[1000]={2,3};
-	int primenumber[100]={0};
-	int count = 1000;
-	int i;
-	for (i=5; i<count; i=i+2)
-	{	
+	// pre condition for prime numbers: 0, 1 are not prime 2 is the smallest even prime  number.
 	
-	}
-	return 0;
 }
 
 
